@@ -164,10 +164,12 @@ const Index = () => {
                   <Spinner />
                 </div>
               ) : (
-                <Editor
-                  initialContent={AiResponseData.articleResponse}
-                  setArticleCreationData={setArticleCreationData}
-                />
+                <div className="editor">
+                  <Editor
+                    initialContent={AiResponseData.articleResponse}
+                    setArticleCreationData={setArticleCreationData}
+                  />
+                </div>
               )}
             </div>
             <div className="p-4 bg-gray-100 border  border-gray-300 rounded">
