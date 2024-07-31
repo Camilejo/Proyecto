@@ -16,40 +16,28 @@ const Header = () => {
             </div>
             <div className="hidden sm:ml-6 sm:block">
               <div className="flex space-x-4">
-                <a
-                  href="#"
-                  className=" px-3 text-3xl font-medium text-white"
-                  aria-current="page"
+                <Link to="/" className=" px-3 text-3xl font-medium text-white">
+                  <span className="text-yellow-300">ART</span>
+                  <span className="text-blue-500">IC</span>
+                  <span className="text-red-500">OL</span>
+                </Link>
+
+                <Link
+                  to="/"
+                  className={`mx-2 rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:underline ${
+                    location.pathname === "/" ? "text-yellow-300" : ""
+                  }`}
                 >
-                  <Link to="/">
-                    <span className="text-yellow-300">ART</span>
-                    <span className="text-blue-500">IC</span>
-                    <span className="text-red-500">OL</span>
-                  </Link>
-                </a>
-                <a
-                  href="#"
-                  className="rounded-md px-3 py-2 text-sm font-medium text-gray-300"
+                  Principal
+                </Link>
+                <Link
+                  to="/articulos"
+                  className={`mx-5 rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:underline ${
+                    location.pathname === "/articulos" ? "text-yellow-300" : ""
+                  }`}
                 >
-                  <Link
-                    to="/"
-                    className={`mx-2 hover:underline ${
-                      location.pathname === "/" ? "text-yellow-300" : ""
-                    }`}
-                  >
-                    Principal
-                  </Link>
-                  <Link
-                    to="/articulos"
-                    className={`mx-5  hover:underline ${
-                      location.pathname === "/articulos"
-                        ? "text-yellow-300"
-                        : ""
-                    }`}
-                  >
-                    Articulos
-                  </Link>
-                </a>
+                  Articulos
+                </Link>
               </div>
             </div>
           </div>

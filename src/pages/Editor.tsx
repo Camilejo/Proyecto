@@ -10,7 +10,6 @@ import {
   Heading,
   ParagraphButtonUI,
   ImageInsertViaUrl,
-  List,
   Image,
 } from "ckeditor5"
 import { CKEditor, CKEditorContext } from "@ckeditor/ckeditor5-react"
@@ -47,7 +46,6 @@ const Editor: React.FC<EditorProps> = ({
             Italic,
             Image,
             ImageInsertViaUrl,
-            List,
           ],
           toolbar: [
             "undo",
@@ -63,8 +61,6 @@ const Editor: React.FC<EditorProps> = ({
             "italic",
             "insertImage",
             "|",
-            "bulletedList",
-            "NumberedList",
           ],
         }}
         data={initialContent}
