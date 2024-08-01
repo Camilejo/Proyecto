@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
 import { marked } from "marked"
 import { GoogleAIService } from "../services/GoogleAIService"
@@ -8,6 +8,7 @@ import { extractTitleContent } from "../utils"
 
 const Index = () => {
   const [inputText, setInputText] = useState("")
+  const [storedTags, setStoredTags] = useState([])
   const [AiResponseData, setAiResponseData] = useState({
     percentageData: "",
     articleResponse: "",
@@ -25,6 +26,12 @@ const Index = () => {
     },
     isLoading: false,
   })
+
+  useEffect(() => {
+    if (!inputTags.isLoading && inputTags.tags.length > 0) {
+      setStoredTags(inputTags.tags)
+    }
+  }, [inputTags])
 
   const [articleCreationData, setArticleCreationData] = useState({
     title: "",
@@ -73,7 +80,7 @@ const Index = () => {
 
         setAiResponseData({
           ...AiResponseData,
-          percentageData: `El contenido está suficientemente relacionado con Colombia (${contentSimilarity}%)`,
+          percentageData: `Contenido suficientemente relacionado con Colombia (${contentSimilarity}%)`,
           articleResponse: markedContent,
           error: {
             isError: false,
@@ -90,7 +97,7 @@ const Index = () => {
       } else {
         setAiResponseData({
           ...AiResponseData,
-          percentageData: `El contenido no está suficientemente relacionado con Colombia (${contentSimilarity}%)`,
+          percentageData: `El contenido esta muy relacionado con Colombia (${contentSimilarity}%)`,
         })
       }
     } catch (error) {
@@ -137,7 +144,9 @@ const Index = () => {
               className="p-2 border border-gray-300 rounded mb-4 w-full"
             />
             <div className="p-4 bg-gray-100 border border-gray-300 rounded">
-              {AiResponseData.percentageData}
+              {AiResponseData.percentageData
+                ? AiResponseData.percentageData
+                : "Aún no has generado un artículo..."}
             </div>
           </div>
 
@@ -178,9 +187,9 @@ const Index = () => {
             </div>
             <div className="p-5 bg-gray-100 border border-gray-300 rounded">
               {inputTags.isLoading
-                ? "Generando etiquetas..."
-                : inputTags.tags.length > 0
-                ? inputTags.tags.map((tag, index) => (
+                ? "Generando nuevas etiquetas..."
+                : storedTags.length > 0
+                ? storedTags.map((tag, index) => (
                     <label
                       key={index}
                       className="inline-block m-0.5 bg-black text-white font-semibold py-1 px-2 rounded shadow-md hover:bg-gray-200 hover:text-black transition duration-300"
