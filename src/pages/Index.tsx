@@ -127,7 +127,7 @@ const Index = () => {
     <div className="min-h-screen flex flex-col items-center  p-4">
       <div className="flex flex-row w-full max-w-6xl space-x-4">
         <div className="flex flex-col w-1/2 p-4 h-[600px] overflow-y-auto">
-          <h1 className="text-5xl font-bold mb-6 text-center">
+          <h1 className="text-5xl font-bold mb-6 text-center text-blue-500">
             MADE IN COLOMBIA
           </h1>
           <p className="mb-5">
@@ -165,7 +165,9 @@ const Index = () => {
         </div>
 
         <div className="flex flex-col w-1/2 p-4 overflow-y-auto">
-          <h1 className="text-5xl font-bold mb-6 text-center">EDITOR</h1>
+          <h1 className="text-5xl font-bold mb-6 text-center text-blue-500">
+            EDITOR
+          </h1>
           <p className="mb-5">
             Aquí podrás personalizar el artículo a tu gusto, haz volar tu
             imaginación generando el mejor artículo.

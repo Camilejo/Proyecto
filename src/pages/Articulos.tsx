@@ -16,7 +16,9 @@ const Articulos = () => {
 
   return (
     <>
-      <h1 className="text-5xl font-bold mb-6 text-center">ARTÍCULOS</h1>
+      <h1 className="text-5xl font-bold mb-6 text-center text-blue-500">
+        ARTÍCULOS
+      </h1>
       <hr />
       <div className="min-h-screen flex flex-col items-center p-4">
         <div className="grid grid-cols-3 gap-4 w-full max-w-6xl">
