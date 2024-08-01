@@ -123,7 +123,7 @@ const Index = () => {
           <h1 className="text-5xl font-bold mb-6 text-center">
             MADE IN COLOMBIA
           </h1>
-          <p>
+          <p className="mb-5">
             Atrévete a generar artículos completamente gratis utilizando
             inteligencia artificial.
           </p>
@@ -157,10 +157,14 @@ const Index = () => {
 
         <div className="flex flex-col w-1/2 p-4 overflow-y-auto">
           <h1 className="text-5xl font-bold mb-6 text-center">EDITOR</h1>
-          <div className="flex flex-col h-full">
-            <div className="border-gray-200 rounded relative mb-2 overflow-y-auto h-full">
+          <p className="mb-5">
+            Aquí podrás personalizar el artículo a tu gusto, haz volar tu
+            imaginación generando el mejor artículo.
+          </p>
+          <div className="flex flex-col mb-5">
+            <div className="border-gray-200 rounded relative mb-5 overflow-y-auto h-full">
               {loading ? (
-                <div className="flex justify-center items-center h-full">
+                <div className="flex mb-7 justify-center items-center ">
                   <Spinner />
                 </div>
               ) : (
@@ -172,7 +176,7 @@ const Index = () => {
                 </div>
               )}
             </div>
-            <div className="p-4 bg-gray-100 border  border-gray-300 rounded">
+            <div className="p-5 bg-gray-100 border border-gray-300 rounded">
               {inputTags.isLoading
                 ? "Generando etiquetas..."
                 : inputTags.tags.length > 0
