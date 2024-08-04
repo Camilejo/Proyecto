@@ -97,7 +97,7 @@ const Index = () => {
       } else {
         setAiResponseData({
           ...AiResponseData,
-          percentageData: `El contenido esta muy relacionado con Colombia (${contentSimilarity}%)`,
+          percentageData: `El contenido no esta muy relacionado con Colombia (${contentSimilarity}%)`,
         })
       }
     } catch (error) {
